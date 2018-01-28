@@ -1,0 +1,29 @@
+<?php
+include ('conn.php');
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
+$email1=$_POST['email1'];
+$email2=$_POST['email2'];
+$userid=$_POST['userid'];
+$password1=$_POST['password1'];
+$password2=$_POST['password2'];
+$mobile=$_POST['mobile'];
+$gender=$_POST['gender'];
+$address1=$_POST['line1'];
+$address2=$_POST['line2'];
+$country=$_POST['country'];
+$state=$_POST['state'];
+$city=$_POST['city'];
+$postal=$_POST['postal'];
+$question=$_POST['question'];
+$answer=$_POST['answer'];
+$query=mysqli_query($con,"INSERT INTO signup(id,fname,lname,email1,email2,userid,password1,password2,mobile,gender,address1,address2, country,state,city,postal,question,answer) VALUES('','$fname','$lname','$email1','$email2','$userid','$password1','$password2','$mobile','$gender','$address1','$address2','$country','$state','$city','$postal','$question','$answer')");
+if($query)
+{
+header('location:index.php');
+}
+else
+{
+header('location:signup.php');
+}
+?>
